@@ -9,14 +9,14 @@ public final class BinarySearchTree<T extends Comparable<T>> {
 
     // -------------------- Constructor --------------------
 
-    private Node<T> root;
+    private Node root;
 
     // -------------------- Public Methods --------------------
 
     public final void insert(T value) {
         Objects.requireNonNull(value);
         if (root == null) {
-            root = new Node<>(value);
+            root = new Node(value);
         } else {
             insertImpl(value, root);
         }
@@ -32,7 +32,7 @@ public final class BinarySearchTree<T extends Comparable<T>> {
 
     // -------------------- Private Methods --------------------
 
-    private boolean searchImpl(T value, Node<T> currentNode) {
+    private boolean searchImpl(T value, Node currentNode) {
         if (currentNode == null) {
             return false;
         }
@@ -47,14 +47,14 @@ public final class BinarySearchTree<T extends Comparable<T>> {
         }
     }
 
-    private void insertImpl(T value, Node<T> currentNode) {
+    private void insertImpl(T value, Node currentNode) {
         int compare = value.compareTo(currentNode.value);
         if (compare != 0) {
             if (compare < 0 && currentNode.left == null) {
                // less than and there's no left child
-                currentNode.left = new Node<>(value);
+                currentNode.left = new Node(value);
             } else if (compare > 0 && currentNode.right == null) {
-                currentNode.right = new Node<>(value);
+                currentNode.right = new Node(value);
             } else if (compare < 0) {
                 insertImpl(value, currentNode.left);
             } else {
@@ -65,10 +65,10 @@ public final class BinarySearchTree<T extends Comparable<T>> {
 
     // -------------------- Inner Classes --------------------
 
-    private class Node<T> {
+    private class Node {
         private T value;
-        private Node<T> left;
-        private Node<T> right;
+        private Node left;
+        private Node right;
 
         Node(T value) {
             this.value = Objects.requireNonNull(value);
