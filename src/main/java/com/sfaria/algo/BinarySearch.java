@@ -24,7 +24,7 @@ public final class BinarySearch {
             return false;
         }
 
-        int mid = low + (high - low) / 2;
+        int mid = (low + high) / 2;
         T middleItem = array[mid];
         if (item.compareTo(middleItem) == 0) {
             return true;
