@@ -9,7 +9,7 @@ public final class MergeSort {
 
     // -------------------- Public Methods --------------------
 
-    public static final <T extends Comparable<T>> void sort(T[] array) {
+    public static <T extends Comparable<T>> void sort(T[] array) {
         if (array == null) {
             throw new IllegalArgumentException("Null array!");
         }
