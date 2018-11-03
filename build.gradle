@@ -3,7 +3,7 @@ apply plugin: 'java'
 group 'com.sfaria'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 10
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
