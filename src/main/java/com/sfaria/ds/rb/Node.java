@@ -12,9 +12,9 @@ final class Node<T> {
     private T value;
     private Color color;
 
-    private Node parent;
-    private Node left;
-    private Node right;
+    private Node<T> parent;
+    private Node<T> left;
+    private Node<T> right;
 
     // -------------------- Constructors --------------------
 
@@ -22,6 +22,8 @@ final class Node<T> {
         this.parent = parent;
         this.value = value;
         this.color = color;
+        this.left = null;
+        this.right = null;
     }
 
     // -------------------- Default Methods --------------------
