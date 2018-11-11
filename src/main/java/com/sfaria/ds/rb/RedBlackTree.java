@@ -1,7 +1,5 @@
 package com.sfaria.ds.rb;
 
-import com.sfaria.ds.BinarySearchTree;
-
 import java.util.Objects;
 
 /**

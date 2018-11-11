@@ -1,5 +1,6 @@
-package com.sfaria.ds;
+package com.sfaria.ds.bst;
 
+import com.sfaria.ds.bst.BinarySearchTree;
 import net.andreinc.mockneat.MockNeat;
 import org.junit.Before;
 import org.junit.Test;
