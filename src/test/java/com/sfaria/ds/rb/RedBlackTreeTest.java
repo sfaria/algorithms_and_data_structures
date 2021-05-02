@@ -1,14 +1,13 @@
 package com.sfaria.ds.rb;
 
 import net.andreinc.mockneat.MockNeat;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.sfaria.ds.rb.Node.Color.BLACK;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Scott Faria
@@ -21,7 +20,7 @@ public class RedBlackTreeTest {
 
     // -------------------- Setup --------------------
 
-    @Before
+    @BeforeEach
     public void setUp() {
         mockNeat = MockNeat.secure();
     }

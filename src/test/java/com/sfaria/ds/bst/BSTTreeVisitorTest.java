@@ -1,13 +1,12 @@
 package com.sfaria.ds.bst;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Scott Faria
@@ -27,7 +26,7 @@ public class BSTTreeVisitorTest {
 
     // -------------------- Setup Method --------------------
 
-    @Before
+    @BeforeEach
     public void setUp() {
         tree = new BinarySearchTree<>();
         tree.insert(4);
