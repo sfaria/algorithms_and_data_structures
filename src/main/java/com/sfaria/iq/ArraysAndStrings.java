@@ -121,19 +121,43 @@ public final class ArraysAndStrings {
      * write a method to rotate the image by 90 degrees. Can you do this in place?
      */
     public static int[][] problem_1_6(int[][] matrix) {
-        for (int y = 0; y < matrix.length; y++) {
-            int[] row = matrix[y];
+        int matrixLength = matrix.length;
+        int iterations = matrixLength / 2;
+        int layer = 0;
+        while (layer < iterations) {
+            int start = layer;
+            int end = matrixLength - layer - 1;
+            while (start < end) {
+                int x0 = layer + start, y0 = layer;
+                int x1 = end, y1 = start + layer;
+                int x2 = end - start, y2 = end;
+                int x3 = layer, y3 = end - start;
 
+                int temp = matrix[y0][x0];
+                matrix[y0][x0] = matrix[y3][x3];
+                matrix[y3][x3] = matrix[y2][x2];
+                matrix[y2][x2] = matrix[y1][x1];
+                matrix[y1][x1] = temp;
+                start++;
+            }
+            layer++;
         }
 
-        return null;
+        return matrix;
     }
 
     // -------------------- Main --------------------
 
     public static void main(String[] args) {
-        System.err.println(question_1_5("aabcccccaaa"));
-        System.err.println(question_1_5("aab"));
-        System.err.println(question_1_5("aaaaaaaaaaaaaaaaaaaaaaaaax"));
+        int[][] matrix = {
+            {1,  2,  3,  4,  5},
+            {6,  7,  8,  9,  10},
+            {11, 12, 13, 14, 15},
+            {16, 17, 18, 19, 20},
+            {21, 22, 23, 24, 25}
+        };
+
+        matrix = problem_1_6(matrix);
+        System.err.println(matrix);
     }
 }
