@@ -2,12 +2,17 @@ apply plugin: 'java'
 
 group 'com.sfaria'
 version '1.0-SNAPSHOT'
+gradle.startParameter.showStacktrace = ShowStacktrace.ALWAYS
 
 sourceCompatibility = 15
 
 repositories {
     mavenCentral()
     jcenter()
+}
+
+test {
+    useJUnitPlatform()
 }
 
 dependencies {
